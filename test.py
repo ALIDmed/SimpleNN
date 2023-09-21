@@ -8,18 +8,17 @@ from nn.optimizers import Optimizer_Adam
 from nn.accuracy import Accuracy_Categorical
 
 
-# X, y, X_test, y_test = create_data_mnist('fashion_mnist_images')
+X, y, X_test, y_test = create_data_mnist('fashion_mnist_images')
 
-# # shuffling
-# keys = np.array(range(X.shape[0]))
-# np.random.shuffle(keys)
-# X = X[keys]
-# y = y[keys]
+# shuffling
+keys = np.array(range(X.shape[0]))
+np.random.shuffle(keys)
+X = X[keys]
+y = y[keys]
 
-# # preprocessing/scaling
-# X = (X.reshape(X.shape[0], -1).astype(np.float32) - 127.5) / 127.5
-# X_test = (X_test.reshape(
-#     X_test.shape[0], -1).astype(np.float32) - 127.5) / 127.5
+# preprocessing/scaling
+X = (X.reshape(X.shape[0], -1).astype(np.float32) - 127.5) / 127.5
+X_test = (X_test.reshape(X_test.shape[0], -1).astype(np.float32) - 127.5) / 127.5
 
 X = np.array([
     [1, 2, 2, 2],
